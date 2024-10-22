@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailedActivity">
+
+
+    <ImageView
+        android:id="@+id/edt_detailed_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_launcher_background2"
+        android:scaleType="centerCrop"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edt_detailed_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Product Detailed"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:translationY="-50dp"
+        android:id="@+id/edt_cardview"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_detailed_img">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_detailed_name"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:text="Product Name"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/edt_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0"
+                    android:textColor="@color/black"
+                    android:layout_toStartOf="@+id/edt_my_rating"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <RatingBar
+                    android:id="@+id/edt_my_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Price"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_700"
+
+                    />
+                <TextView
+                    android:id="@+id/edt_detailed_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_700"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp"
+                >
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/plusicon"
+                    android:id="@+id/edt_add_item"
+                    />
+                <TextView
+                    android:id="@+id/edt_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    />
+
+                <ImageView
+                    android:layout_marginLeft="7dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/iconminus"
+                    android:id="@+id/edt_remove_item"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/edt_add_to_cart"
+        android:backgroundTint="@color/pink"
+        app:layout_constraintVertical_bias="0.1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/mycart"
+        android:drawableTint="@color/white"
+        app:layout_constraintWidth_percent="0.8"
+        android:padding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_cardview" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
